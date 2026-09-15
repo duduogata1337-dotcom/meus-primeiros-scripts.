@@ -1,0 +1,13 @@
+local armadilha = script.Parent
+
+local dano = 20
+
+local funcaoAoEncostar = function(parteQueEncostou)
+      local personagem = parteQueEncostou.Parent
+      local humanoid = personagem:FindFirstChildWichIsA("humanoid")
+
+      if humanoid then
+          humanoid.Health = humanoid.Health - dano
+  end
+end
+armadilha.Touched:Connect(funcaoAoEncostar)
